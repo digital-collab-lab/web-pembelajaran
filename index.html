@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal Pembelajaran Kelas 8 — Matematika & IPS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <!-- Kiri: Pilihan Mata Pelajaran -->
+      <nav class="nav-left" aria-label="Menu Utama">
+        <button class="nav-btn active" data-view="home" id="nav-home">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Beranda</span>
+        </button>
+        <button class="nav-btn" data-view="matematika" id="nav-matematika">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+          <span>Matematika</span>
+        </button>
+        <button class="nav-btn" data-view="ips" id="nav-ips">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span>IPS</span>
+        </button>
+      </nav>
+
+      <!-- Kanan: Mode Admin & 2 Logo yang Bisa Diubah -->
+      <div class="nav-right">
+        <button class="admin-toggle-btn" id="toggle-admin-btn" title="Aktifkan/Nonaktifkan Mode Admin">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span id="admin-btn-text">Mode Admin</span>
+        </button>
+
+        <div class="logos-wrapper">
+          <button class="logo-slot" id="logo-slot-1" title="Klik untuk mengubah Logo 1">
+            <img id="logo-img-1" alt="Logo 1" />
+            <span class="logo-edit-badge">✎</span>
+          </button>
+          <button class="logo-slot" id="logo-slot-2" title="Klik untuk mengubah Logo 2">
+            <img id="logo-img-2" alt="Logo 2" />
+            <span class="logo-edit-badge">✎</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BANNER STATUS MODE ADMIN -->
+  <div class="admin-banner hidden" id="admin-banner">
+    <div class="container admin-banner-inner">
+      <span>🛡️ <strong>Mode Admin Aktif:</strong> Kelola bab, sub-bab, link materi, link Google Form, &amp; logo.</span>
+      <button class="btn-reset-data" id="reset-all-btn">Reset Default</button>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT (1 LAYAR PENUH TANPA SCROLL HALAMAN) -->
+  <main class="main-content">
+    <div class="container main-container">
+
+      <!-- HALAMAN BERANDA -->
+      <section id="view-home" class="view-section active">
+        <div class="hero-card">
+          <span class="hero-badge">Kurikulum Merdeka • SMP/MTs Kelas VIII</span>
+          <h1 class="hero-title">Portal Pembelajaran Digital Kelas 8</h1>
+          <p class="hero-desc">
+            Pusat sumber belajar interaktif untuk siswa Kelas 8 yang memuat rangkaian materi dan latihan soal terstruktur untuk mata pelajaran <strong>Matematika</strong> (Relasi &amp; Fungsi, Persamaan Garis Lurus, SPLDV) serta <strong>Ilmu Pengetahuan Sosial (IPS)</strong>.
+          </p>
+
+          <div class="subject-cards-grid">
+            <!-- Kartu Matematika -->
+            <div class="subject-card math-card" data-target="matematika">
+              <div class="subject-icon math-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+              </div>
+              <div class="subject-card-body">
+                <h2>Matematika Kelas 8</h2>
+                <p>Relasi dan Fungsi, Persamaan Garis Lurus, dan SPLDV beserta latihan soal Google Form.</p>
+                <span class="subject-link-text">Pilih Materi &rarr;</span>
+              </div>
+            </div>
+
+            <!-- Kartu IPS -->
+            <div class="subject-card ips-card" data-target="ips">
+              <div class="subject-icon ips-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+              </div>
+              <div class="subject-card-body">
+                <h2>IPS Kelas 8</h2>
+                <p>Kondisi geografis, kemajemukan masyarakat, dan dinamika perekonomian Indonesia.</p>
+                <span class="subject-link-text">Pilih Materi &rarr;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HALAMAN MATA PELAJARAN (TANPA HEADER JUDUL BESAR & TOMBOL KEMBALI) -->
+      <section id="view-subject" class="view-section hidden">
+        <div class="subject-toolbar">
+          <div id="bab-tabs" class="bab-tabs">
+            <!-- Tab Bab dirender otomatis lewat script.js -->
+          </div>
+          <button class="btn-primary hidden" id="add-subbab-btn">+ Tambah Sub-Bab</button>
+        </div>
+
+        <div id="subbab-container" class="subbab-container">
+          <!-- Kartu Sub-bab untuk Bab terpilih -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER IDENTITAS MATEMATIKA EKONOMI 23 -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand" id="footer-logo-trigger" title="Klik untuk mengganti logo identitas footer">
+        <img id="footer-logo-img" alt="Logo Matematika Ekonomi 23" class="footer-logo" />
+        <div class="footer-text">
+          <span class="footer-title">PPL STKIP PGRI LUMAJANG 2026</span>
+          <span class="footer-sub">Tim Mahasiswa Pend.Matematika & Pend.Ekonomi Angkatan 2023</span>
+        </div>
+      </div>
+      <div class="footer-copy">
+        &copy; <span id="current-year"></span> Portal Belajar Kelas 8
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL UBAH LOGO -->
+  <div class="modal-backdrop hidden" id="logo-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="logo-modal-title">Ubah Logo</h3>
+        <button class="modal-close" id="close-logo-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="logo-preview-wrap">
+          <img id="modal-logo-preview" alt="Preview Logo" />
+        </div>
+        <div class="form-group">
+          <label for="logo-file-input">Unggah Gambar dari Perangkat (PNG/JPG/SVG)</label>
+          <input type="file" id="logo-file-input" accept="image/*" />
+        </div>
+        <div class="form-group">
+          <label for="logo-url-input">Atau Masukkan URL Gambar</label>
+          <input type="url" id="logo-url-input" placeholder="https://contoh.com/logo.png" />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" id="reset-single-logo-btn">Logo Default</button>
+        <button class="btn-primary" id="save-logo-btn">Simpan Logo</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL TAMBAH / EDIT SUB-BAB -->
+  <div class="modal-backdrop hidden" id="subbab-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="subbab-modal-title">Edit Sub-Bab</h3>
+        <button class="modal-close" id="close-subbab-modal">&times;</button>
+      </div>
+      <form id="subbab-form">
+        <div class="modal-body">
+          <input type="hidden" id="edit-subbab-id" />
+          <div class="form-group">
+            <label for="input-bab">Nama Bab / Topik Utama</label>
+            <input type="text" id="input-bab" placeholder="Contoh: Bab 1: Relasi dan Fungsi" required />
+          </div>
+          <div class="form-group">
+            <label for="input-title">Judul Sub-Bab</label>
+            <input type="text" id="input-title" placeholder="Contoh: 1.1 Memahami Relasi & Penyajiannya" required />
+          </div>
+          <div class="form-group">
+            <label for="input-desc">Deskripsi Singkat</label>
+            <textarea id="input-desc" rows="2" placeholder="Ringkasan singkat materi..."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="input-material-url">Link Materi Pembelajaran (Drive / PDF / Video)</label>
+            <input type="url" id="input-material-url" placeholder="https://drive.google.com/..." required />
+          </div>
+          <div class="form-group">
+            <label for="input-gform-url">Link Soal Latihan (Google Form)</label>
+            <input type="url" id="input-gform-url" placeholder="https://forms.gle/..." required />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" id="cancel-subbab-btn">Batal</button>
+          <button type="submit" class="btn-primary">Simpan Perubahan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
